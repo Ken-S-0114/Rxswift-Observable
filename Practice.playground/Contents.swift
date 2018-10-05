@@ -3,12 +3,10 @@ import RxSwift
 
 // --------------------------------------------------
 // RxSwift
-
 let disposeBag = DisposeBag()
 // --------------------------------------------------
 // UI
 weak var button: UIButton!
-
 // --------------------------------------------------
 /*
  // PublishSubject
@@ -91,7 +89,7 @@ class Presenter2 {
     }
 
     func doSomething() {
-        print("Variable_value: \(buttonHiddenVar.value)")
+        print("value(Variable): \(buttonHiddenVar.value)")
     }
 
 }
