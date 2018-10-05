@@ -39,3 +39,4 @@ let disposable = presenter.buttonHidden.bind(to: button.rx.isHidden)
 presenter.doSomething()
 presenter.start()
 presenter.doSomething()
+
