@@ -7,7 +7,7 @@ import RxCocoa
 let disposeBag = DisposeBag()
 // --------------------------------------------------
 // UI
-weak var button: UIButton!
+var button = UIButton()
 // --------------------------------------------------
 
 class Presenter {
