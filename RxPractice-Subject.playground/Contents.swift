@@ -23,7 +23,9 @@ class Hoge {
     }
 }
 
+// 受信側の処理
 let hoge = Hoge()
+// イベントを購読
 hoge.event
     .subscribe(onNext: { print("PublishSubject: \($0)") } )
     .disposed(by: disposeBag)
