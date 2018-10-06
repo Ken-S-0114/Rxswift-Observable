@@ -46,9 +46,6 @@
 		B213C88F21666DA9009C2700 = {
 			isa = PBXGroup;
 			children = (
-				B2EB3B582167C4AE00BD0A5F /* RxPractice-Operator.playground */,
-				B2EB3B572167B44C00BD0A5F /* RxPractice-Subject.playground */,
-				B2EB3B562167B42800BD0A5F /* RxPractice-Bind.playground */,
 				B213C89A21666DA9009C2700 /* RxSwift-Observable */,
 				B213C89921666DA9009C2700 /* Products */,
 				C19E03870ECD093B4A8D3071 /* Pods */,
@@ -67,6 +64,7 @@
 		B213C89A21666DA9009C2700 /* RxSwift-Observable */ = {
 			isa = PBXGroup;
 			children = (
+				B27CD60021686E99001EF055 /* playground */,
 				B213C89B21666DA9009C2700 /* AppDelegate.swift */,
 				B213C89D21666DA9009C2700 /* ViewController.swift */,
 				B213C89F21666DA9009C2700 /* Main.storyboard */,
@@ -75,6 +73,16 @@
 				B213C8A721666DAA009C2700 /* Info.plist */,
 			);
 			path = "RxSwift-Observable";
+			sourceTree = "<group>";
+		};
+		B27CD60021686E99001EF055 /* playground */ = {
+			isa = PBXGroup;
+			children = (
+				B2EB3B582167C4AE00BD0A5F /* RxPractice-Operator.playground */,
+				B2EB3B562167B42800BD0A5F /* RxPractice-Bind.playground */,
+				B2EB3B572167B44C00BD0A5F /* RxPractice-Subject.playground */,
+			);
+			path = playground;
 			sourceTree = "<group>";
 		};
 		BA99C7A2B34A058786F31B74 /* Frameworks */ = {
