@@ -26,6 +26,7 @@
 		B213C8A721666DAA009C2700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B2EB3B562167B42800BD0A5F /* RxPractice-Bind.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Bind.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B2EB3B572167B44C00BD0A5F /* RxPractice-Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Subject.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B2EB3B582167C4AE00BD0A5F /* RxPractice-Operator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Operator.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C6A373555C18123B58B5168A /* Pods_RxSwift_Observable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxSwift_Observable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8094B3E5A7AE991393429A6 /* Pods-RxSwift-Observable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxSwift-Observable.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxSwift-Observable/Pods-RxSwift-Observable.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -45,6 +46,7 @@
 		B213C88F21666DA9009C2700 = {
 			isa = PBXGroup;
 			children = (
+				B2EB3B582167C4AE00BD0A5F /* RxPractice-Operator.playground */,
 				B2EB3B572167B44C00BD0A5F /* RxPractice-Subject.playground */,
 				B2EB3B562167B42800BD0A5F /* RxPractice-Bind.playground */,
 				B213C89A21666DA9009C2700 /* RxSwift-Observable */,

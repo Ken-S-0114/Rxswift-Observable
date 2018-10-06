@@ -38,7 +38,7 @@ class Presenter {
 let presenter = Presenter()
 // RxCocoa: 画面部分とのバインドを目的としている
 let disposable = presenter.buttonHidden.bind(to: button.rx.isHidden)
-//  let disposable = presenter.buttonHidden.bind(to: button2.rx.isHidden ?? presenter.buttonHidden)
+//let disposable2 = presenter.buttonHidden.bind(to: button2.rx.isHidden ?? presenter.buttonHidden)
 
 presenter.doSomething()
 presenter.start()
