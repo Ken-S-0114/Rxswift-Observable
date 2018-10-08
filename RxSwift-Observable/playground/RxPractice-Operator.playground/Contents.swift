@@ -9,6 +9,8 @@ let disposeBag = DisposeBag()
  // map
  // イベントの各要素を別の要素に変換
  */
+
+// of で Observable を順に通知する Observable を作っている
 Observable.of(1, 2, 3)
     .map { $0 * $0 }
     .subscribe(onNext: { print("map: \($0)") })
