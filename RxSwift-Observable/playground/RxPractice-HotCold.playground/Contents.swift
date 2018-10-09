@@ -41,17 +41,56 @@ class ServerDataLoader {
     }
 }
 
+//let url = URL(string: "https://itunes.apple.com/lookup?id=1187265767&country=JP")
+//let loader = ServerDataLoader(url: url!)
+//loader.result.subscribe(
+//    onNext: { data in
+//        // データ受信時の処理
+//        dump(data)
+//},
+//    onError: { error in
+//        // エラー時の処理
+//        print(error)
+//})
+//
+//loader.start()
+//loader.cancel()
+
+class ColdServerDataLoader {
+    private let resultSubject = PublishSubject<Data>()
+
+    var result: Observable<Data> { return resultSubject }
+
+    func fetchServerDataWithRequest(url: URL) -> Observable<Data> {
+        return Observable.create { observer in
+            let configuration = URLSessionConfiguration.default
+            let session = URLSession(configuration: configuration)
+            let task = session.dataTask(with: url) { data, response, error in
+                if let data = data {
+                    observer.onNext(data)
+                    observer.onCompleted()
+                } else {
+                    observer.onError(error!)
+                }
+            }
+            task.resume()
+            return Disposables.create { task.cancel() }
+        }
+    }
+
+}
+
 let url = URL(string: "https://itunes.apple.com/lookup?id=1187265767&country=JP")
-let loader = ServerDataLoader(url: url!)
-loader.result.subscribe(
-    onNext: { data in
+let loader = ColdServerDataLoader()
+_ = loader.fetchServerDataWithRequest(url: url!)
+    //メインスレッドでイベントを通知
+    .observeOn(MainScheduler.instance)
+    .map { XMLParser(data: $0) }
+    .subscribe(onNext: { result in
         // データ受信時の処理
-        dump(data)
-},
-    onError: { error in
+        print(result)
+    }, onError: { error in
         // エラー時の処理
         print(error)
-})
+    })
 
-loader.start()
-//loader.cancel()
