@@ -13,6 +13,10 @@ func parse(data: Data) -> String {
     let str = String(data: data, encoding: .utf8)!
     return str
 }
+
+enum MyError: Error {
+    case FailedToFetchServerData
+}
 // --------------------------------------------------
 
 class ServerDataLoader {
@@ -35,7 +39,7 @@ class ServerDataLoader {
                     resultSubject.onNext(data)
                     resultSubject.onCompleted()
                 } else {
-                    resultSubject.onError(error!)
+                    resultSubject.onError(error ?? MyError.FailedToFetchServerData)
                 }
             }
         }
@@ -77,7 +81,7 @@ class ColdServerDataLoader {
                     observer.onNext(data)
                     observer.onCompleted()
                 } else {
-                    observer.onError(error!)
+                    observer.onError(error ?? MyError.FailedToFetchServerData)
                 }
             }
             task.resume()
@@ -149,21 +153,54 @@ let loader = ColdServerDataLoader()
  タイムアウトしたら代わりに実行する Observable を指定する other 引数を持つバージョンも存在
  */
 
-let lowPriorityScheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default))
+//let lowPriorityScheduler = ConcurrentDispatchQueueScheduler(queue: DispatchQueue.global(qos: .default))
+//_ = loader.fetchServerDataWithRequest(url: url!)
+////    .timeout(5, scheduler: lowPriorityScheduler)
+//    // Observable.just は指定した値を onNext で１つだけ流して onCompleted になる Observable を生成します。
+//    // ここではタイムアウトしたら空の Data を渡して完了するようにしている
+//    .timeout(5, other: Observable.just(Data()), scheduler: lowPriorityScheduler)
+//    .map { parse(data: $0) }
+//    .observeOn(MainScheduler.instance)
+//    .subscribe(
+//        onNext: { result in
+//            print(result)
+//        },
+//        onError: { error in
+//            print(error)
+//    }
+//)
+
+/*
+ catchErrorJustReturn
+ onError が発生した場合の処理
+ */
+//_ = loader.fetchServerDataWithRequest(url: url!)
+//    .map { parse(data: $0) }
+//    .catchErrorJustReturn("")
+//    .observeOn(MainScheduler.instance)
+//    .subscribe(
+//        onNext: { result in
+//            // パース済みデータ受信時の処理
+//            print(result)
+//    }
+//)
+
+/*
+ catchError
+ エラー内容によって処理を選択
+ */
+
 _ = loader.fetchServerDataWithRequest(url: url!)
-//    .timeout(5, scheduler: lowPriorityScheduler)
-    // Observable.just は指定した値を onNext で１つだけ流して onCompleted になる Observable を生成します。
-    // ここではタイムアウトしたら空の Data を渡して完了するようにしている
-    .timeout(5, other: Observable.just(Data()), scheduler: lowPriorityScheduler)
     .map { parse(data: $0) }
+    .catchError { error in
+        if error is MyError { throw error }
+//        if error is MyError { return Observable.error(error) }
+        return Observable.just("")
+    }
     .observeOn(MainScheduler.instance)
     .subscribe(
         onNext: { result in
+            // パース済みデータ受信時の処理
             print(result)
-        },
-        onError: { error in
-            print(error)
     }
 )
-
-
