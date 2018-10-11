@@ -24,7 +24,8 @@
 		B213C8A221666DAA009C2700 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B213C8A521666DAA009C2700 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B213C8A721666DAA009C2700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B27CD602216A37A6001EF055 /* RxPractice-Merge.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Merge.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B214B5AF216FACAE00BFAA5F /* RxPractice-LinkTogether.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-LinkTogether.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B27CD602216A37A6001EF055 /* RxPractice-Multiple.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Multiple.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B27CD604216B4E05001EF055 /* RxPractice-HotCold.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-HotCold.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B2EB3B562167B42800BD0A5F /* RxPractice-Bind.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Bind.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B2EB3B572167B44C00BD0A5F /* RxPractice-Subject.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "RxPractice-Subject.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -83,8 +84,9 @@
 				B2EB3B582167C4AE00BD0A5F /* RxPractice-Operator.playground */,
 				B2EB3B562167B42800BD0A5F /* RxPractice-Bind.playground */,
 				B2EB3B572167B44C00BD0A5F /* RxPractice-Subject.playground */,
-				B27CD602216A37A6001EF055 /* RxPractice-Merge.playground */,
+				B27CD602216A37A6001EF055 /* RxPractice-Multiple.playground */,
 				B27CD604216B4E05001EF055 /* RxPractice-HotCold.playground */,
+				B214B5AF216FACAE00BFAA5F /* RxPractice-LinkTogether.playground */,
 			);
 			path = playground;
 			sourceTree = "<group>";
