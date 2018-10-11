@@ -17,6 +17,16 @@ func parse(data: Data) -> String {
 enum MyError: Error {
     case FailedToFetchServerData
 }
+
+extension MyError {
+    var description: String {
+        switch self {
+        case .FailedToFetchServerData:
+            return "FailedToFetchServerData"
+        }
+    }
+
+}
 // --------------------------------------------------
 
 class ServerDataLoader {
